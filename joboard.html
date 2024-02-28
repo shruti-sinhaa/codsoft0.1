@@ -1,0 +1,403 @@
+<html>
+<head>
+  <title>Job Board </title>
+ <style>
+    
+body{
+	font-family: sans-serif;
+	margin : 0px;
+  padding-bottom: 5em;
+  background-color: #d2e3fa;
+
+}
+.border{
+	height: 6px;
+	border:0;
+	background-color: #fd7576;
+	background-image: linear-gradient(to right, #fd7576, #fd7576 25%, #fec85d 25%, #fec85d 50%, #4db8de 50%, #4db8de 75%, #a378fc 75%, #a378fc 100%, #a378fc 100%);
+	-webkit-background-size: 50% 100%;
+  -moz-background-size: 50% 100%;
+  background-size: 50% 100%; 
+  
+}
+
+.clearfix:before, .clearfix:after {
+	content:" ";
+	display: table;
+
+}
+.clearfix:after{
+	clear: both;
+}
+.wrapper{
+	width:750px;
+	max-width: 90%;
+	margin: 0 auto;
+}
+.main_header{
+	margin: 5em 0 3em 0;
+}
+.logo img {
+	
+		width:75px;
+		float: left;
+}
+.logo h1{
+	float: left;
+	margin: 0 0 0 1em;
+	text-transform: uppercase;
+	font-size: 1.34em;
+	padding-top: 1.8em;
+	color :#34324b;
+}
+.logo h1 span{
+	font-weight: 400;
+}
+.nav{
+	float:right;
+	padding-top: 2.7em;
+}
+.nav a {
+	color: #74718f;
+	margin-left: 1em;
+	text-decoration: none;
+	font-weight: 550;
+}
+.current{
+	color: #34324b;
+	font-weight: 700;
+	
+}
+#timeline{
+  width: 100%;
+  position: relative;
+  list-style: none;
+  padding: 0;
+
+}
+#timeline a {
+text-decoration: none;
+
+}
+ #timeline:after {
+    content: "";
+    width: 1px;
+    background: 1px #e6e7e9;
+    height: 90%;
+    position: absolute;
+    top: 3em;
+    left: 3em;
+    z-index: 0; }
+#timeline .listing{
+  background-color: white;
+  border: 1px solid #e6e7e9;
+  border-radius: 0.3em;
+  padding: 1em;
+  margin-bottom: 1em;
+  position: relative;
+  z-index: 1;
+  display: table;
+  width: 100%;
+  transition: all .3s ease-in-out;
+
+
+}
+.listing:hover{
+  cursor: pointer;
+  box-shadow: 0px 2px 40px 0 rgba(0,0,0,0.1);
+
+}
+#timeline .listing img,.info,.job_type{
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 0.9em;
+  color: #74718f;
+
+}
+#timeline .image_wrapper{
+  width: 60px;
+}
+#timeline .image_wrapper img{
+  width: 60px;
+  display : block;
+  margin : 0 auto;
+  border-radius: 0.25em;
+}
+.info{
+  line-height: 1.25;
+  width: 640px;
+  padding-left: 25px;
+}
+.job_title{
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #34324b;
+}
+.job_info{
+  color:#74718f;
+  display: block;
+
+}
+.job_info span{
+  margin: 0 .75em;
+}
+.job_type{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.75em;
+  position: relative;
+  white-space: nowrap;
+  padding-top: .6em;
+  width: 100px;
+}
+.job_type:before{
+  content: " ";
+  background-color: #fd7576;
+  width:10px;
+  height: 10px;
+  border-radius: 100%;
+  position: absolute;
+  left:-20px;
+  top:27px;
+}
+.full_time{
+  color: #fd7576;
+
+}
+.full_time:before{
+background-color:#fd7576;
+}
+.part_time{
+  color: #fec85d;
+
+}
+.part_time:before{
+background-color:#fec85d;
+}
+.freelance{
+  color: #4db8de;
+
+}
+.freelance:before{
+background-color:#4db8de;
+}
+.contract{
+  color: #a378fc;
+
+}
+.contract:before{
+background-color:#a378fc;
+}
+.date{
+  display: inline-block; 
+  padding: 1em 0;
+  width: 100px;
+  background-color: white;
+  border: 1px solid #e6e7e9;
+  border-radius: 3em;
+  font-weight: 700;
+  font-size: .75em;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  margin : 1em 0 2em 0;
+  color: #34324b;
+}
+.load_more{
+  text-align: center;
+
+}
+.button{
+  border : 2px solid #a378fc;
+  outline: none;
+  padding: 1em 3.5em;
+  text-align: center;
+  background: transparent;
+  border-radius: 3em;
+  color: #a378fc;
+  transition:all .3s ease-in-out;
+}
+.button:hover{
+ background-color: #a378fc;
+  color: white;
+
+}
+@media only screen and (max-width: 768px){
+  .main_header{
+  margin: 3em 0;
+}
+.logo{
+   display: block;
+  text-align: center;
+}
+.logo img {
+  
+    float: none;
+
+}
+.logo h1{
+  float: none;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-size: 1.1em;
+ 
+
+}
+.nav{
+  float:none;
+  text-align: center;
+
+}
+.nav a {
+  margin: 0 .5em;
+  text-decoration: none;
+}
+
+}
+ </style>
+</head>
+
+<body>
+  <div class="border"></div>
+  <div class="wrapper">
+    <header class="main_header clearfix">
+      <div class="logo">
+        <img src="https://discoverystation.org/wp-content/uploads/2018/08/shutterstock_1033446238.jpg">
+        <h1> Awesome <span>Jobs</span></h1>
+      </div>
+      <div class="nav">
+        <a href="#" class="current">All Jobs</a>
+        <a href="#">Full-time</a>
+        <a href="#">Part-time</a>
+        <a href="#">Freelance</a>
+        <a href="#">Contract</a>
+      </div>
+    </header>
+    <ul id="timeline">
+      <a href="#">
+        <li class="listing clearfix">
+          <div class="image_wrapper">
+            <img src="https://www.peppersquare.com/wp-content/uploads/2022/07/UX-UI-Design-Blog@2x.png">
+          </div>
+          <div class="info">
+            <span class="job_title">UX Designer</span>
+            <span class="job_info">Twitter <span>&bull;</span> San Francisco <span>&bull;</span> March 1st</span>
+          </div>
+          <span class="job_type full_time">Full-Time</span>
+        </li>
+      </a>
+
+      <a href="#">
+        <li class="listing clearfix">
+          <div class="image_wrapper">
+            <img src="https://www.smartics.eu/confluence/download/attachments/33521886/piwik?version=1&modificationDate=1443174833000&api=v2" alt="Product Hunt">
+          </div>
+          <div class="info">
+            <span class="job_title">Product Designer</span>
+            <span class="job_info">Product Hunt <span>&bull;</span> San Francisco <span>&bull;</span> March 1st</span>
+          </div>
+          <span class="job_type full_time">Full-Time</span>
+        </li>
+      </a>
+
+      <li class="date">Today</li>
+
+      <li class="listing clearfix">
+        <div class="image_wrapper">
+          <img src="http://icons.iconarchive.com/icons/danleech/simple/1024/dribbble-icon.png" alt="Dribbble">
+        </div>
+        <div class="info">
+          <span class="job_title">Senior Rails Dev</span>
+          <span class="job_info">Dribbble <span>&bull;</span> San Francisco <span>&bull;</span> March 1st</span>
+        </div>
+        <span class="job_type freelance">Freelance</span>
+      </li>
+
+      <li class="listing clearfix">
+        <div class="image_wrapper">
+          <img src="https://contentstatic.techgig.com/photo/90226037.cms">
+        </div>
+        <div class="info">
+          <span class="job_title">Front-End Engineer</span>
+          <span class="job_info">Medium <span>&bull;</span> San Francisco <span>&bull;</span> March 1st</span>
+        </div>
+        <span class="job_type contract">Contract</span>
+      </li>
+
+      <li class="listing clearfix">
+        <div class="image_wrapper">
+          <img src="https://cdn-icons-png.flaticon.com/512/953/953060.png">
+        </div>
+        <div class="info">
+          <span class="job_title">Visual Designer</span>
+          <span class="job_info">SoundCloud <span>&bull;</span> San Francisco <span>&bull;</span> March 1st</span>
+        </div>
+        <span class="job_type full_time">Full-Time</span>
+      </li>
+
+      <li class="listing clearfix">
+        <div class="image_wrapper">
+          <img src="https://www.peppersquare.com/wp-content/uploads/2022/07/UX-UI-Design-Blog@2x.png">
+        </div>
+        <div class="info">
+          <span class="job_title">UX Designer</span>
+          <span class="job_info">Twitter <span>&bull;</span> San Francisco <span>&bull;</span> March 1st</span>
+        </div>
+        <span class="job_type part_time">Part-Time</span>
+      </li>
+
+      <li class="date">Jan 28th</li>
+
+      <li class="listing clearfix">
+        <div class="image_wrapper">
+          <img src="http://icons.iconarchive.com/icons/danleech/simple/1024/dribbble-icon.png" alt="Dribbble">
+        </div>
+        <div class="info">
+          <span class="job_title">Senior Rails Dev</span>
+          <span class="job_info">Dribbble <span>&bull;</span> San Francisco <span>&bull;</span> March 1st</span>
+        </div>
+        <span class="job_type freelance">Freelance</span>
+      </li>
+
+      <li class="listing clearfix">
+        <div class="image_wrapper">
+          <img src="https://contentstatic.techgig.com/photo/90226037.cms">
+        </div>
+        <div class="info">
+          <span class="job_title">Front-End Engineer</span>
+          <span class="job_info">Medium <span>&bull;</span> San Francisco <span>&bull;</span> March 1st</span>
+        </div>
+        <span class="job_type contract">Contract</span>
+      </li>
+
+      <li class="listing clearfix">
+        <div class="image_wrapper">
+          <img src="https://cdn-icons-png.flaticon.com/512/953/953060.png">
+        </div>
+        <div class="info">
+          <span class="job_title">Visual Designer</span>
+          <span class="job_info">SoundCloud <span>&bull;</span> San Francisco <span>&bull;</span> March 1st</span>
+        </div>
+        <span class="job_type full_time">Full-Time</span>
+      </li>
+
+      <li class="listing clearfix">
+        <div class="image_wrapper">
+          <img src="https://www.peppersquare.com/wp-content/uploads/2022/07/UX-UI-Design-Blog@2x.png">
+        </div>
+        <div class="info">
+          <span class="job_title">UX Designer</span>
+          <span class="job_info">Twitter <span>&bull;</span> San Francisco <span>&bull;</span> March 1st</span>
+        </div>
+        <span class="job_type part_time">Part-Time</span>
+      </li>
+
+      <li class="date">Jan 27th</li>
+
+    </ul>
+    <div class="load_more">
+      <button class="button"> Load More </button>
+    </div>
+</body>
+
+</html>
